@@ -1,0 +1,158 @@
+BÀI TẬP 2
+PHÂN LOẠI CÁC PHÂN HỆ HTTT RIKKEIEXPRESS
+
+1. PHẦN 1 - CHỮA LỖI PHÂN LOẠI
+
+Ba nhóm hệ thống thông tin:
+
+- TPS (Transaction Processing System - Hệ thống xử lý giao dịch): phục vụ các giao dịch tác nghiệp hằng ngày, thường do nhân viên trực tiếp sử dụng.
+- MIS (Management Information System - Hệ thống thông tin quản lý): tổng hợp dữ liệu thành báo cáo, thống kê định kỳ để hỗ trợ cấp quản lý.
+- DSS (Decision Support System - Hệ thống hỗ trợ quyết định): phân tích dữ liệu, xu hướng và dự báo để hỗ trợ các quyết định chiến lược hoặc bán cấu trúc.
+
+1.1. Các lỗi của thực tập sinh
+
+Lỗi 1:
+"Báo cáo tổng hợp doanh thu tháng cho Trưởng bưu cục" được xếp vào TPS.
+=> SAI. Đây là MIS vì hệ thống tổng hợp dữ liệu và tạo báo cáo định kỳ cho người quản lý.
+
+Lỗi 2:
+"Công cụ phân tích dự báo điểm nóng quá tải đơn hàng mùa Tết" được xếp vào TPS.
+=> SAI. Đây là DSS vì sử dụng phân tích/dự báo để hỗ trợ quyết định về điều phối và chiến lược.
+
+Lỗi 3:
+"Tài xế bấm nút 'Đã lấy hàng' trên App Mobile" được xếp vào MIS.
+=> SAI. Đây là TPS vì đây là một giao dịch tác nghiệp phát sinh trong quá trình giao hàng.
+
+Lỗi 4:
+"Nhân viên kho quét mã vạch nhập kho" được xếp vào MIS.
+=> SAI. Đây là TPS vì quét mã và ghi nhận nhập kho là giao dịch hằng ngày.
+
+Lỗi 5:
+"In phiếu cước giao hàng cho khách tại bưu cục" được xếp vào DSS.
+=> SAI. Đây là TPS vì việc in phiếu cước gắn với một giao dịch cụ thể tại bưu cục.
+
+2. BẢNG PHÂN LOẠI CHUẨN XÁC
+
+| Tính năng | Phân loại đúng | Lý do |
+|---------------------------------------------------------------|--------|--------------------------------------------------------------|
+| Tài xế bấm "Đã lấy hàng" trên App Mobile | TPS | Ghi nhận giao dịch tác nghiệp hàng ngày của tài xế |
+| Nhân viên kho quét mã vạch nhập kho | TPS | Ghi nhận giao dịch nhập kho trực tiếp |
+| In phiếu cước giao hàng cho khách tại bưu cục | TPS | Xử lý giao dịch cước cụ thể của khách hàng |
+| Báo cáo tổng hợp doanh thu tháng cho Trưởng bưu cục | MIS | Tổng hợp dữ liệu và báo cáo định kỳ cho quản lý |
+| Báo cáo số lượng đơn giao tuần trước | MIS | Thống kê dữ liệu quá khứ theo kỳ |
+| Báo cáo doanh thu theo chi nhánh | MIS | Cung cấp thông tin tổng hợp để quản lý theo dõi |
+| Công cụ phân tích dự báo điểm nóng quá tải đơn hàng mùa Tết | DSS | Phân tích và dự báo để hỗ trợ quyết định |
+| Dự báo nhu cầu giao hàng 3 tháng tới dựa trên dữ liệu 3 năm | DSS | Phân tích dữ liệu lịch sử để dự báo tương lai |
+| Phân tích đề xuất mở thêm bưu cục | DSS | Hỗ trợ quyết định chiến lược dựa trên dữ liệu |
+
+3. GIẢI THÍCH TPS ĐÒI HỎI TỐC ĐỘ VÀ ĐỘ CHÍNH XÁC CAO
+
+TPS xử lý các giao dịch phát sinh liên tục trong hoạt động hằng ngày như tạo đơn, quét mã nhập kho, cập nhật trạng thái lấy hàng và giao hàng.
+
+TPS cần tốc độ xử lý nhanh vì:
+- Số lượng giao dịch rất lớn và liên tục.
+- Nhân viên cần thao tác nhanh để không làm gián đoạn quy trình giao nhận.
+- Dữ liệu chậm cập nhật có thể làm các bộ phận khác nhìn thấy trạng thái đơn hàng không chính xác.
+- Khi hệ thống có nhiều giao dịch đồng thời, tốc độ thấp có thể tạo ra hàng đợi và ảnh hưởng toàn bộ hoạt động.
+
+TPS cần độ chính xác rất cao vì:
+- Một giao dịch sai có thể dẫn đến sai trạng thái đơn hàng.
+- Sai phí hoặc sai thông tin nhập kho có thể gây thiệt hại tài chính.
+- Dữ liệu TPS là nguồn đầu vào cho MIS và DSS. Nếu dữ liệu gốc sai thì báo cáo quản lý và dự báo cũng có thể sai.
+
+Vì vậy, TPS là nền tảng dữ liệu cho các cấp hệ thống phía trên.
+
+4. PHÂN BIỆT MIS VÀ DSS
+
+MIS chủ yếu trả lời câu hỏi:
+"Điều gì đã xảy ra?"
+
+Ví dụ:
+- Tuần trước có bao nhiêu đơn giao thành công?
+- Tháng này chi nhánh có doanh thu bao nhiêu?
+- Số đơn theo từng chi nhánh là bao nhiêu?
+
+DSS hướng tới câu hỏi:
+"Điều gì có thể xảy ra và nên làm gì?"
+
+Ví dụ:
+- Ba tháng tới nhu cầu giao hàng có thể tăng bao nhiêu?
+- Khu vực nào có nguy cơ quá tải vào mùa Tết?
+- Có nên mở thêm bưu cục tại khu vực có nhu cầu cao không?
+
+Do đó, báo cáo thống kê số lượng đơn giao tuần trước là MIS, còn dự báo nhu cầu giao hàng 3 tháng tới dựa trên dữ liệu 3 năm là DSS.
+
+5. PHẦN 2 - MÃ NGUỒN PYTHON
+
+Chương trình dưới đây sử dụng từ khóa trong tên tính năng để tự động phân loại thành TPS, MIS hoặc DSS.
+
+def classify_logistics_feature(feature_name):
+    feature = feature_name.lower()
+
+    # TPS: giao dịch tác nghiệp hằng ngày
+    tps_keywords = [
+        "tài xế", "đã lấy hàng", "quét mã", "mã vạch",
+        "nhập kho", "in phiếu cước", "tạo đơn",
+        "giao hàng", "thu tiền", "cập nhật trạng thái"
+    ]
+
+    # DSS: phân tích, dự báo và hỗ trợ quyết định chiến lược
+    dss_keywords = [
+        "dự báo", "phân tích dự báo", "điểm nóng",
+        "quá tải", "dự đoán", "nhu cầu 3 tháng",
+        "mở thêm bưu cục", "chiến lược", "xu hướng"
+    ]
+
+    # MIS: báo cáo, thống kê, tổng hợp định kỳ
+    mis_keywords = [
+        "báo cáo", "tổng hợp", "thống kê",
+        "doanh thu tháng", "tuần trước", "theo chi nhánh"
+    ]
+
+    # Kiểm tra DSS trước vì các tính năng dự báo có thể đồng thời chứa từ "báo cáo"
+    for keyword in dss_keywords:
+        if keyword in feature:
+            return "DSS"
+
+    for keyword in tps_keywords:
+        if keyword in feature:
+            return "TPS"
+
+    for keyword in mis_keywords:
+        if keyword in feature:
+            return "MIS"
+
+    return "Không xác định"
+
+
+# Kiểm tra các tính năng trong đề bài
+features = [
+    "Báo cáo tổng hợp doanh thu tháng cho Trưởng bưu cục",
+    "Công cụ phân tích dự báo điểm nóng quá tải đơn hàng mùa Tết",
+    "Tài xế bấm nút 'Đã lấy hàng' trên App Mobile",
+    "Nhân viên kho quét mã vạch nhập kho",
+    "In phiếu cước giao hàng cho khách tại bưu cục"
+]
+
+for feature in features:
+    result = classify_logistics_feature(feature)
+    print(f"{feature} -> {result}")
+
+
+6. KẾT QUẢ CHẠY THỬ
+
+Báo cáo tổng hợp doanh thu tháng cho Trưởng bưu cục -> MIS
+Công cụ phân tích dự báo điểm nóng quá tải đơn hàng mùa Tết -> DSS
+Tài xế bấm nút 'Đã lấy hàng' trên App Mobile -> TPS
+Nhân viên kho quét mã vạch nhập kho -> TPS
+In phiếu cước giao hàng cho khách tại bưu cục -> TPS
+
+7. KẾT LUẬN
+
+Việc phân loại đúng TPS, MIS và DSS giúp RikkeiExpress xác định rõ mục đích sử dụng của từng tính năng và quyền hạn của từng nhóm người dùng.
+
+TPS tập trung vào xử lý giao dịch hằng ngày và tạo dữ liệu gốc.
+MIS lấy dữ liệu đã được xử lý để tạo báo cáo, thống kê cho cấp quản lý.
+DSS sử dụng dữ liệu lịch sử cùng các phương pháp phân tích và dự báo để hỗ trợ quyết định chiến lược.
+
+Phân loại đúng giúp hệ thống vận hành rõ ràng, tránh việc sử dụng sai chức năng và giúp Ban Giám đốc có thông tin phù hợp để ra quyết định.

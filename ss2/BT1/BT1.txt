@@ -1,0 +1,152 @@
+BÀI TẬP 1
+PHÂN TÍCH HTTT VÀ XỬ LÝ DỮ LIỆU RIKKEIEXPRESS
+
+1. PHÂN TÍCH 5 THÀNH PHẦN CỦA HỆ THỐNG THÔNG TIN
+
+1.1. Phần cứng (Hardware)
+Phần cứng gồm máy chủ lưu trữ dữ liệu đơn hàng, máy tính/máy tính bảng của Giám đốc, thiết bị mạng và các thiết bị tại chi nhánh.
+Vai trò: tiếp nhận, lưu trữ và truyền dữ liệu giao hàng từ các chi nhánh về hệ thống báo cáo. Nếu phần cứng hoặc mạng không ổn định, dữ liệu báo cáo có thể chậm hoặc thiếu.
+
+1.2. Phần mềm (Software)
+Phần mềm gồm hệ thống RikkeiExpress Logistics, máy chủ xử lý dữ liệu, cơ sở dữ liệu và ứng dụng/màn hình báo cáo.
+Vai trò: thu thập dữ liệu đơn hàng, lọc các đơn không hợp lệ, tính tổng doanh thu, số đơn giao thành công và doanh thu trung bình. Phần mềm hiện tại đang có lỗi thiết kế vì in trực tiếp dữ liệu thô thay vì tổng hợp thành thông tin.
+
+1.3. Dữ liệu (Data)
+Dữ liệu đầu vào gồm mã đơn hàng, phí giao hàng và trạng thái đơn hàng. Ví dụ:
+- order_id: "01"
+- fee: 15000
+- status: "DELIVERED"
+
+Dữ liệu là các giá trị riêng lẻ chưa được xử lý. Trong bài toán này, dữ liệu phải được lọc theo trạng thái trước khi tính doanh thu.
+
+1.4. Quy trình (Procedure)
+Quy trình đề xuất:
+1. Nhận danh sách đơn hàng từ máy chủ.
+2. Kiểm tra trạng thái từng đơn.
+3. Chỉ giữ các đơn có trạng thái DELIVERED.
+4. Cộng phí của các đơn DELIVERED để tính tổng doanh thu.
+5. Đếm số đơn DELIVERED.
+6. Tính doanh thu trung bình trên mỗi đơn thành công.
+7. Hiển thị kết quả tổng hợp trên màn hình điều hành.
+
+Quy trình này giúp loại bỏ CANCELLED và RETURNED khỏi doanh thu thực tế.
+
+1.5. Con người (People)
+Bao gồm Giám đốc Vùng, nhân viên chi nhánh, đội tài xế và nhân viên quản trị hệ thống.
+Vai trò: nhân viên/tài xế tạo và cập nhật dữ liệu đơn hàng; hệ thống xử lý dữ liệu; Giám đốc sử dụng thông tin tổng hợp để đánh giá chi nhánh, thưởng nóng và điều phối nhân sự.
+
+2. DỮ LIỆU THÔ VS. THÔNG TIN
+
+Màn hình hiện tại chỉ hiển thị dữ liệu thô vì hệ thống in từng dòng giao dịch:
+"Đơn 01 - 15.000đ", "Đơn 02 - 20.000đ", ...
+
+Các dòng này chỉ cho biết từng giao dịch riêng lẻ, chưa trả lời được các câu hỏi quản trị như:
+- Tổng doanh thu thực tế là bao nhiêu?
+- Có bao nhiêu đơn giao thành công?
+- Doanh thu trung bình mỗi đơn là bao nhiêu?
+
+Sau khi dữ liệu được lọc, tính toán và tổng hợp, kết quả mới trở thành thông tin có ý nghĩa đối với người quản lý.
+
+Hậu quả của việc chỉ hiển thị dữ liệu thô:
+- Giám đốc phải tự đọc và tính toán hàng nghìn dòng.
+- Khó so sánh hiệu quả giữa các chi nhánh.
+- Có nguy cơ tính cả đơn CANCELLED/RETURNED làm sai doanh thu.
+- Chậm đưa ra quyết định thưởng nóng.
+- Khó điều phối nhân sự và đánh giá hiệu quả hoạt động.
+
+3. XÁC ĐỊNH INPUT VÀ OUTPUT
+
+Input:
+Một danh sách order_list, trong đó mỗi đơn hàng có:
+- order_id: mã đơn.
+- fee: phí giao hàng.
+- status: trạng thái đơn.
+
+Output:
+Một báo cáo gồm 3 chỉ số:
+1. Tổng doanh thu thực tế.
+2. Số đơn giao thành công.
+3. Doanh thu trung bình trên mỗi đơn thành công.
+
+4. QUY TẮC LỌC DỮ LIỆU
+
+Chỉ tính các đơn có:
+status == "DELIVERED"
+
+Các đơn:
+- CANCELLED: không tính doanh thu.
+- RETURNED: không tính doanh thu.
+- Các trạng thái khác DELIVERED: không tính doanh thu.
+
+Như vậy, phí 0đ hoặc số tiền âm của đơn bị hủy/hoàn không làm ảnh hưởng đến doanh thu thực tế.
+
+5. MÃ NGUỒN PYTHON
+
+def process_revenue_report(order_list):
+    total_revenue = 0
+    successful_orders = 0
+
+    for order in order_list:
+        if order["status"] == "DELIVERED":
+            total_revenue += order["fee"]
+            successful_orders += 1
+
+    if successful_orders > 0:
+        average_revenue = total_revenue / successful_orders
+    else:
+        average_revenue = 0
+
+    return {
+        "total_revenue": total_revenue,
+        "successful_orders": successful_orders,
+        "average_revenue": average_revenue
+    }
+
+
+# Dữ liệu thử nghiệm
+order_data = [
+    {"order_id": "01", "fee": 15000, "status": "DELIVERED"},
+    {"order_id": "02", "fee": 20000, "status": "DELIVERED"},
+    {"order_id": "03", "fee": 0, "status": "CANCELLED"},
+    {"order_id": "04", "fee": -5000, "status": "RETURNED"},
+    {"order_id": "05", "fee": 25000, "status": "DELIVERED"}
+]
+
+report = process_revenue_report(order_data)
+
+print("=== BÁO CÁO DOANH THU RIKKEIEXPRESS ===")
+print(f"Tổng doanh thu thực tế: {report['total_revenue']:,}đ")
+print(f"Số đơn giao thành công: {report['successful_orders']}")
+print(f"Doanh thu trung bình/đơn: {report['average_revenue']:,.0f}đ")
+
+
+6. KẾT QUẢ CHẠY CHƯƠNG TRÌNH
+
+Với dữ liệu thử nghiệm:
+- Đơn 01: 15.000đ - DELIVERED -> tính
+- Đơn 02: 20.000đ - DELIVERED -> tính
+- Đơn 03: 0đ - CANCELLED -> loại bỏ
+- Đơn 04: -5.000đ - RETURNED -> loại bỏ
+- Đơn 05: 25.000đ - DELIVERED -> tính
+
+Tổng doanh thu thực tế:
+15.000 + 20.000 + 25.000 = 60.000đ
+
+Số đơn giao thành công:
+3 đơn
+
+Doanh thu trung bình trên mỗi đơn thành công:
+60.000 / 3 = 20.000đ/đơn
+
+Kết quả:
+Tổng doanh thu thực tế: 60.000đ
+Số đơn giao thành công: 3
+Doanh thu trung bình/đơn: 20.000đ
+
+7. KẾT LUẬN
+
+Hệ thống báo cáo ban đầu mới chỉ hiển thị dữ liệu thô nên chưa hỗ trợ tốt cho việc ra quyết định. Giải pháp là xây dựng bước xử lý dữ liệu trước khi hiển thị, trong đó chỉ các đơn DELIVERED mới được tính vào doanh thu.
+
+Chương trình process_revenue_report() đã thực hiện đúng yêu cầu: lọc các đơn CANCELLED và RETURNED, tính tổng doanh thu thực tế, đếm số đơn giao thành công và tính doanh thu trung bình trên mỗi đơn thành công.
+
+Nhờ đó, dữ liệu thô được chuyển thành thông tin quản trị ngắn gọn, chính xác và có giá trị cho Giám đốc trong việc đánh giá chi nhánh, thưởng nóng cho đội tài xế và điều phối nhân sự.
