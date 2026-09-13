@@ -1,0 +1,42 @@
+THỰC HÀNH TRÍCH XUẤT VÀ XÂY DỰNG CLASS DIAGRAM HỆ THỐNG RIKKEISHOP
+
+BƯỚC 1: TRÍCH XUẤT LỚP, THUỘC TÍNH VÀ PHƯƠNG THỨC
+
+1. Lớp Customer
+- Thuộc tính:
+  + customerId: int
+  + fullName: String
+  + phoneNumber: String
+- Phương thức:
+  + placeOrder(): Order
+
+2. Lớp Order
+- Thuộc tính:
+  + orderId: int
+  + createdDate: String
+- Phương thức:
+  + calculateTotal(): double
+
+BƯỚC 2: ACCESS MODIFIER VÀ MULTIPLICITY
+
+- Thuộc tính: private (-)
+- Phương thức: public (+)
+- Quan hệ Customer - Order: Association
+- Multiplicity:
+  + Một Customer có 0..* Order
+  + Mỗi Order thuộc đúng 1 Customer
+- Vì vậy trên sơ đồ: Customer "1" -------- "0..*" Order
+
+BƯỚC 3: CLASS DIAGRAM
+
+Sơ đồ đã được dựng bằng định dạng draw.io trong file:
+RikkeiShop_ClassDiagram.drawio
+
+Gợi ý khi mở bằng draw.io:
+- Customer ở bên trái.
+- Order ở bên phải.
+- Nối bằng Association.
+- Đầu Customer: 1
+- Đầu Order: 0..*
+- Thuộc tính dùng dấu "-" (private).
+- Phương thức dùng dấu "+" (public).

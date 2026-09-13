@@ -1,0 +1,30 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="RikkeiShop - Class Diagram">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <mxCell id="customer" value="&lt;b&gt;Customer&lt;/b&gt;&lt;hr&gt;&lt;div align=&quot;left&quot;&gt;- customerId: int&lt;br&gt;- fullName: String&lt;br&gt;- phoneNumber: String&lt;/div&gt;&lt;hr&gt;&lt;div align=&quot;left&quot;&gt;+ placeOrder(): Order&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontSize=14;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="150" y="250" width="260" height="180" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="order" value="&lt;b&gt;Order&lt;/b&gt;&lt;hr&gt;&lt;div align=&quot;left&quot;&gt;- orderId: int&lt;br&gt;- createdDate: String&lt;/div&gt;&lt;hr&gt;&lt;div align=&quot;left&quot;&gt;+ calculateTotal(): double&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontSize=14;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="600" y="250" width="260" height="160" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="association" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;startArrow=none;strokeWidth=1;" edge="1" parent="1" source="customer" target="order">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="mult_customer" value="1" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=13;" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="420" y="235" width="40" height="30" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="mult_order" value="0..*" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=13;" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="540" y="235" width="50" height="30" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

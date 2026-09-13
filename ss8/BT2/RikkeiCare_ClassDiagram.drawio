@@ -1,0 +1,45 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="RikkeiCare - Refactored Class Diagram">
+    <mxGraphModel dx="1400" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <mxCell id="khoa" value="&lt;b&gt;KhoaKham&lt;/b&gt;&lt;hr&gt;&lt;div align=&quot;left&quot;&gt;- maKhoa: String&lt;br&gt;- tenKhoa: String&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontSize=14;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="100" y="300" width="240" height="120" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="nv" value="&lt;b&gt;&lt;i&gt;NhanVienYTe&lt;/i&gt;&lt;/b&gt;&lt;hr&gt;&lt;div align=&quot;left&quot;&gt;- maNhanVien: String&lt;br&gt;- hoTen: String&lt;br&gt;- soDienThoai: String&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontSize=14;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="480" y="300" width="280" height="150" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="bacsi" value="&lt;b&gt;BacSi&lt;/b&gt;&lt;hr&gt;&lt;div align=&quot;left&quot;&gt;- chuyenKhoa: String&lt;/div&gt;&lt;hr&gt;&lt;div align=&quot;left&quot;&gt;+ kham(benhNhan): void&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontSize=14;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="420" y="570" width="260" height="150" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="yta" value="&lt;b&gt;YTa&lt;/b&gt;&lt;hr&gt;&lt;div align=&quot;left&quot;&gt;- khuVucTruc: String&lt;/div&gt;&lt;hr&gt;&lt;div align=&quot;left&quot;&gt;+ tiemThuoc(benhNhan): void&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontSize=14;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="780" y="570" width="260" height="150" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="agg" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;startArrow=diamondThin;startFill=0;endArrow=none;strokeWidth=1;" edge="1" parent="1" source="khoa" target="nv">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="agg1" value="1" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=13;" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="350" y="275" width="40" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="aggmany" value="1..*" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=13;" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="405" y="275" width="55" height="30" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="inh1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=0;strokeWidth=1;" edge="1" parent="1" source="bacsi" target="nv">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="inh2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=0;strokeWidth=1;" edge="1" parent="1" source="yta" target="nv">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

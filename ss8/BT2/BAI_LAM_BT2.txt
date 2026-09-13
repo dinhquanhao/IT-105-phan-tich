@@ -1,0 +1,58 @@
+THỰC HÀNH PHÁT HIỆN LỖI THIẾT KẾ VÀ TÁI CẤU TRÚC CLASS DIAGRAM HỆ THỐNG RIKKEICARE
+
+BƯỚC 1: SOI LỖI THIẾT KẾ
+
+Các thuộc tính bị khai báo trùng lặp ở cả BacSi và YTa:
+- maNhanVien
+- hoTen
+- soDienThoai
+
+Hậu quả:
+- Khi cần sửa cấu trúc thuộc tính hoTen cho toàn bộ nhân viên y tế, phải sửa ở nhiều lớp, dễ gây thiếu sót và làm tăng chi phí bảo trì.
+
+BƯỚC 2: TÁI CẤU TRÚC BẰNG INHERITANCE
+
+Lớp cha: NhanVienYTe
+- Thuộc tính dùng chung:
+  + maNhanVien: String
+  + hoTen: String
+  + soDienThoai: String
+
+Lớp con: BacSi
+- Thuộc tính riêng:
+  + chuyenKhoa: String
+- Phương thức:
+  + kham(benhNhan): void
+
+Lớp con: YTa
+- Thuộc tính riêng:
+  + khuVucTruc: String
+- Phương thức:
+  + tiemThuoc(benhNhan): void
+
+Quan hệ:
+- BacSi --|> NhanVienYTe: Inheritance
+- YTa --|> NhanVienYTe: Inheritance
+- Mũi tên tam giác rỗng trỏ về NhanVienYTe.
+
+BƯỚC 3: AGGREGATION
+
+- Loại quan hệ: Aggregation (Tổng hợp), ký hiệu hình thoi rỗng.
+- KhoaKham có từ 1 đến nhiều NhanVienYTe: 1..*
+- Mỗi NhanVienYTe thuộc một KhoaKham trong phạm vi mô hình này: 1
+- Nhân viên vẫn tồn tại độc lập nếu KhoaKham giải thể.
+
+BƯỚC 4: CLASS DIAGRAM
+
+Sơ đồ đã được dựng bằng định dạng draw.io trong file:
+RikkeiCare_ClassDiagram.drawio
+
+Sơ đồ gồm 4 lớp:
+1. KhoaKham
+2. NhanVienYTe
+3. BacSi
+4. YTa
+
+Ký hiệu truy cập:
+- Thuộc tính: private (-)
+- Phương thức: public (+)
