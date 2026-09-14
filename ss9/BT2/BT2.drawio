@@ -1,0 +1,92 @@
+<mxfile host="app.diagrams.net" modified="2026-09-15T00:00:00.000Z" agent="ChatGPT" version="24.7.17">
+  <diagram name="BT2 - Smart Locker" id="bt2-smart-locker">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <mxCell id="title" value="SEQUENCE DIAGRAM - NHẬN HÀNG TẠI SMART LOCKER" style="text;html=1;strokeColor=none;fillColor=none;fontStyle=1;fontSize=20;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="300" y="20" width="600" height="40" as="geometry"/>
+        </mxCell>
+
+        <!-- Lifelines -->
+        <mxCell id="actor" value="Khách nhận hàng" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;" vertex="1" parent="1">
+          <mxGeometry x="90" y="90" width="70" height="90" as="geometry"/>
+        </mxCell>
+        <mxCell id="terminal" value="LockerTerminal" style="shape=umlLifeline;perimeter=lifelinePerimeter;html=1;container=1;collapsible=0;recursiveResize=0;dropTarget=0;" vertex="1" parent="1">
+          <mxGeometry x="300" y="90" width="120" height="600" as="geometry"/>
+        </mxCell>
+        <mxCell id="service" value="PackageService" style="shape=umlLifeline;perimeter=lifelinePerimeter;html=1;container=1;collapsible=0;recursiveResize=0;dropTarget=0;" vertex="1" parent="1">
+          <mxGeometry x="650" y="90" width="130" height="600" as="geometry"/>
+        </mxCell>
+
+        <!-- Actor input -->
+        <mxCell id="m1" value="Nhập OTP" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.5;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="160" y="220" as="sourcePoint"/>
+            <mxPoint x="360" y="220" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Sync verify -->
+        <mxCell id="m2" value="verify_otp() [Sync]" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.5;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="360" y="270" as="sourcePoint"/>
+            <mxPoint x="715" y="270" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Return valid -->
+        <mxCell id="m3" value="OTP hợp lệ [Return]" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;dashed=1;endArrow=open;strokeWidth=1.5;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="715" y="330" as="sourcePoint"/>
+            <mxPoint x="360" y="330" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Alt frame -->
+        <mxCell id="alt" value="alt" style="shape=umlFrame;whiteSpace=wrap;html=1;dashed=0;align=left;verticalAlign=top;fontStyle=1;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="240" y="365" width="680" height="270" as="geometry"/>
+        </mxCell>
+        <mxCell id="cond1" value="[OTP đúng]" style="text;html=1;strokeColor=none;fillColor=none;fontStyle=2;align=left;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="255" y="375" width="150" height="30" as="geometry"/>
+        </mxCell>
+
+        <!-- Valid branch -->
+        <mxCell id="m4" value="Báo khách: &quot;Mở tủ thành công&quot;" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.5;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="360" y="430" as="sourcePoint"/>
+            <mxPoint x="160" y="430" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Divider -->
+        <mxCell id="divider" value="else [OTP sai]" style="edgeStyle=none;html=1;endArrow=none;dashed=0;strokeWidth=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="240" y="500" as="sourcePoint"/>
+            <mxPoint x="920" y="500" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Invalid branch -->
+        <mxCell id="m5" value="OTP không hợp lệ [Return]" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;dashed=1;endArrow=open;strokeWidth=1.5;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="715" y="545" as="sourcePoint"/>
+            <mxPoint x="360" y="545" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m6" value="Báo khách: &quot;Mã OTP không đúng, vui lòng thử lại&quot;" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.5;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="360" y="590" as="sourcePoint"/>
+            <mxPoint x="160" y="590" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Notes -->
+        <mxCell id="note" value="Quy ước: Sync = gọi và chờ kết quả; Return = phản hồi; alt/else = 2 khả năng loại trừ nhau." style="shape=note;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="940" y="380" width="190" height="130" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

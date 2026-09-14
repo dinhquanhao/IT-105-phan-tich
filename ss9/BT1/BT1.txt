@@ -1,0 +1,23 @@
+BÀI TẬP BT1 - SỬA LỖI BIỂU ĐỒ TUẦN TỰ CHO PHÂN HỆ XUẤT KHO RIKKEI LOGISTICS
+
+PHẦN 1 - XÁC ĐỊNH 2 LỖI
+
+Lỗi 1: Thông điệp “Kiểm tra hạn lưu kho”
+- Bản vẽ sai: InventoryManager gửi thông điệp sang ExpiryChecker.
+- Kịch bản đúng: InventoryManager tự kiểm tra hạn lưu kho trên chính nó.
+- Cách sửa: đổi thành thông điệp Tự gọi (Self), đầu gửi và đầu nhận đều là InventoryManager.
+
+Lỗi 2: Thông điệp “Kết quả xuất kho”
+- Bản vẽ sai: kết quả được biểu diễn bằng thông điệp nét liền/Sync.
+- Kịch bản đúng: đây là kết quả trả về sau khi InventoryManager xử lý xong.
+- Cách sửa: dùng thông điệp Phản hồi (Return), nét đứt và hướng từ InventoryManager về WarehouseUI.
+
+PHẦN 2 - SEQUENCE DIAGRAM ĐÚNG
+
+Thứ tự 4 thông điệp:
+1. Nhân viên kho → WarehouseUI: Quét mã kiện hàng
+2. WarehouseUI → InventoryManager: export_package() [Sync]
+3. InventoryManager → InventoryManager: Kiểm tra hạn lưu kho [Self]
+4. InventoryManager → WarehouseUI: Kết quả xuất kho [Return]
+
+File BT1.drawio là file có thể mở trực tiếp bằng diagrams.net (draw.io) để chỉnh sửa.

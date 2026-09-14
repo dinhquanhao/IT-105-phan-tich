@@ -1,0 +1,30 @@
+BT2 - ĐIỀN KHUYẾT LUỒNG NHẬN HÀNG TẠI TỦ LOCKER
+
+PHẦN 1 - XÁC ĐỊNH THIẾU SÓT
+
+Sơ đồ hiện tại chưa mô tả đầy đủ hai khả năng của nghiệp vụ xác thực OTP. Việc chỉ thể hiện luồng OTP đúng sẽ làm mất trường hợp OTP sai, trong khi quy tắc nghiệp vụ quy định kết quả xác thực chỉ có đúng hoặc sai.
+
+Cần bổ sung một Combined Fragment "alt" với hai nhánh:
+- [OTP đúng]: PackageService trả "OTP hợp lệ", sau đó LockerTerminal báo khách "Mở tủ thành công".
+- else [OTP sai]: PackageService trả "OTP không hợp lệ", sau đó LockerTerminal báo khách "Mã OTP không đúng, vui lòng thử lại".
+
+Nếu không có nhánh else, hệ thống không thể hiện được đầy đủ hành vi khi khách nhập sai OTP.
+
+PHẦN 2 - LUỒNG ĐÚNG
+
+1. Khách nhận hàng -> LockerTerminal: Nhập OTP.
+2. LockerTerminal -> PackageService: verify_otp() [Sync].
+3. PackageService -> LockerTerminal: Kết quả xác thực [Return].
+4. Combined Fragment alt:
+   a) [OTP đúng]
+      - PackageService -> LockerTerminal: OTP hợp lệ [Return].
+      - LockerTerminal -> Khách nhận hàng: "Mở tủ thành công".
+   b) else [OTP sai]
+      - PackageService -> LockerTerminal: OTP không hợp lệ [Return].
+      - LockerTerminal -> Khách nhận hàng: "Mã OTP không đúng, vui lòng thử lại".
+
+LƯU Ý:
+- alt/else bao trùm hai nhánh xử lý kết quả.
+- Hai nhánh là loại trừ nhau: OTP chỉ có thể đúng hoặc sai.
+- verify_otp() là thông điệp Sync vì LockerTerminal gửi yêu cầu và chờ kết quả.
+- Các kết quả xác thực là Return.
