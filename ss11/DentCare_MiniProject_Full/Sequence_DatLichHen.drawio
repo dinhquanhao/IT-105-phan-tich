@@ -1,0 +1,139 @@
+<mxfile host="app.diagrams.net" agent="claude">
+  <diagram name="Sequence - Dat lich hen" id="Sequence_-_Dat_lich_hen">
+    <mxGraphModel dx="1232" dy="1178" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="640" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="n2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;" value=":BenhNhan" vertex="1">
+          <mxGeometry height="40" width="170" x="80" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="n3" edge="1" parent="1" style="endArrow=none;dashed=1;html=1;strokeColor=#666666;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="165" y="80" as="sourcePoint" />
+            <mxPoint x="165" y="560" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n4" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;" value=":DatLichUI" vertex="1">
+          <mxGeometry height="40" width="170" x="310" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="n5" edge="1" parent="1" style="endArrow=none;dashed=1;html=1;strokeColor=#666666;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="395" y="80" as="sourcePoint" />
+            <mxPoint x="395" y="560" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n6" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;" value=":AppointmentService" vertex="1">
+          <mxGeometry height="40" width="170" x="540" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="n7" edge="1" parent="1" style="endArrow=none;dashed=1;html=1;strokeColor=#666666;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="625" y="80" as="sourcePoint" />
+            <mxPoint x="625" y="560" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n8" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;" value=":DentistService" vertex="1">
+          <mxGeometry height="40" width="170" x="770" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="n9" edge="1" parent="1" style="endArrow=none;dashed=1;html=1;strokeColor=#666666;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="855" y="80" as="sourcePoint" />
+            <mxPoint x="855" y="560" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n10" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;" value=":CSDL" vertex="1">
+          <mxGeometry height="40" width="170" x="1000" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="n11" edge="1" parent="1" style="endArrow=none;dashed=1;html=1;strokeColor=#666666;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1085" y="80" as="sourcePoint" />
+            <mxPoint x="1085" y="560" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n12" edge="1" parent="1" style="endArrow=block;html=1;strokeColor=#000000;fontSize=11;align=left;verticalAlign=bottom;" value="yêu cầu đặt lịch(ngày, giờ, dentistId)">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="165" y="100" as="sourcePoint" />
+            <mxPoint x="395" y="100" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n13" edge="1" parent="1" style="endArrow=block;html=1;strokeColor=#000000;fontSize=11;align=left;verticalAlign=bottom;" value="kiemTraLichTrong(dentistId, ngày, giờ)">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="395" y="130" as="sourcePoint" />
+            <mxPoint x="625" y="130" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n14" edge="1" parent="1" style="endArrow=block;html=1;strokeColor=#000000;fontSize=11;align=left;verticalAlign=bottom;" value="kiemTraLich(dentistId, ngày, giờ)">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="625" y="170" as="sourcePoint" />
+            <mxPoint x="855" y="170" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n15" edge="1" parent="1" style="endArrow=block;html=1;strokeColor=#000000;fontSize=11;align=left;verticalAlign=bottom;" value="SELECT lịch hẹn theo timeSlot">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="855" y="210" as="sourcePoint" />
+            <mxPoint x="1085" y="210" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n16" edge="1" parent="1" style="endArrow=open;dashed=1;html=1;strokeColor=#000000;fontSize=11;align=left;verticalAlign=bottom;" value="kết quả truy vấn">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1085" y="240" as="sourcePoint" />
+            <mxPoint x="855" y="240" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n17" edge="1" parent="1" style="endArrow=open;dashed=1;html=1;strokeColor=#000000;fontSize=11;align=left;verticalAlign=bottom;" value="trạng thái timeSlot">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="855" y="270" as="sourcePoint" />
+            <mxPoint x="625" y="270" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n18" parent="1" style="shape=umlFrame;whiteSpace=wrap;html=1;fontStyle=1;align=left;verticalAlign=top;spacingLeft=6;spacingTop=2;fontSize=12;width=60;height=30;" value="alt" vertex="1">
+          <mxGeometry height="26" width="60" x="400" y="310" as="geometry" />
+        </mxCell>
+        <mxCell id="n19" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;verticalAlign=top;align=left;" value="" vertex="1">
+          <mxGeometry height="190" width="900" x="400" y="310" as="geometry" />
+        </mxCell>
+        <mxCell id="n20" parent="1" style="text;html=1;align=left;verticalAlign=middle;fontStyle=2;fontSize=11;" value="[Còn slot trống]" vertex="1">
+          <mxGeometry height="20" width="830" x="465" y="313" as="geometry" />
+        </mxCell>
+        <mxCell id="n21" edge="1" parent="1" style="endArrow=block;html=1;strokeColor=#000000;fontSize=11;align=left;verticalAlign=bottom;" value="INSERT Appointment(status=Chờ xác nhận)">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="625" y="350" as="sourcePoint" />
+            <mxPoint x="1085" y="350" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n22" edge="1" parent="1" style="endArrow=open;dashed=1;html=1;strokeColor=#000000;fontSize=11;align=left;verticalAlign=bottom;" value="OK">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1085" y="380" as="sourcePoint" />
+            <mxPoint x="625" y="380" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n23" edge="1" parent="1" style="endArrow=open;dashed=1;html=1;strokeColor=#000000;fontSize=11;align=left;verticalAlign=bottom;" value="đặt lịch thành công">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="625" y="410" as="sourcePoint" />
+            <mxPoint x="395" y="410" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n24" edge="1" parent="1" style="endArrow=none;dashed=1;html=1;strokeColor=#000000;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="400" y="430" as="sourcePoint" />
+            <mxPoint x="1300" y="430" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n25" parent="1" style="text;html=1;align=left;verticalAlign=middle;fontStyle=2;fontSize=11;" value="[else: Không còn slot trống]" vertex="1">
+          <mxGeometry height="20" width="890" x="405" y="432" as="geometry" />
+        </mxCell>
+        <mxCell id="n26" edge="1" parent="1" style="endArrow=open;dashed=1;html=1;strokeColor=#000000;fontSize=11;align=left;verticalAlign=bottom;" value="báo lỗi: trùng lịch hẹn">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="625" y="470" as="sourcePoint" />
+            <mxPoint x="395" y="470" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n27" edge="1" parent="1" style="endArrow=open;dashed=1;html=1;strokeColor=#000000;fontSize=11;align=left;verticalAlign=bottom;" value="thông báo kết quả đặt lịch">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="395" y="520" as="sourcePoint" />
+            <mxPoint x="165" y="520" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

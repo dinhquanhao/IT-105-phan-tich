@@ -1,0 +1,139 @@
+<mxfile host="app.diagrams.net" agent="claude">
+  <diagram name="Class Diagram - DentCare" id="Class_Diagram_-_DentCare">
+    <mxGraphModel dx="1137" dy="1088" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1700" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="n2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;align=center;" value="Patient" vertex="1">
+          <mxGeometry height="28" width="220" x="40" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="n3" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#6c8ebf;align=left;verticalAlign=top;spacingLeft=6;spacingTop=4;fontSize=11;" value="- patientId: String&#xa;- fullName: String&#xa;- phone: String&#xa;- dob: Date&#xa;- address: String" vertex="1">
+          <mxGeometry height="90" width="220" x="40" y="88" as="geometry" />
+        </mxCell>
+        <mxCell id="n4" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#6c8ebf;align=left;verticalAlign=top;spacingLeft=6;spacingTop=4;fontSize=11;" value="+ bookAppointment()&#xa;+ viewProfile()&#xa;+ viewHistory()" vertex="1">
+          <mxGeometry height="58" width="220" x="40" y="178" as="geometry" />
+        </mxCell>
+        <mxCell id="n5" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;align=center;" value="Dentist" vertex="1">
+          <mxGeometry height="28" width="220" x="40" y="320" as="geometry" />
+        </mxCell>
+        <mxCell id="n6" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#6c8ebf;align=left;verticalAlign=top;spacingLeft=6;spacingTop=4;fontSize=11;" value="- dentistId: String&#xa;- fullName: String&#xa;- specialty: String" vertex="1">
+          <mxGeometry height="58" width="220" x="40" y="348" as="geometry" />
+        </mxCell>
+        <mxCell id="n7" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#6c8ebf;align=left;verticalAlign=top;spacingLeft=6;spacingTop=4;fontSize=11;" value="+ viewSchedule()" vertex="1">
+          <mxGeometry height="26" width="220" x="40" y="406" as="geometry" />
+        </mxCell>
+        <mxCell id="n8" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;align=center;" value="Appointment" vertex="1">
+          <mxGeometry height="28" width="220" x="380" y="190" as="geometry" />
+        </mxCell>
+        <mxCell id="n9" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#6c8ebf;align=left;verticalAlign=top;spacingLeft=6;spacingTop=4;fontSize=11;" value="- appointmentId: String&#xa;- date: Date&#xa;- timeSlot: String&#xa;- status: String" vertex="1">
+          <mxGeometry height="74" width="220" x="380" y="218" as="geometry" />
+        </mxCell>
+        <mxCell id="n10" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#6c8ebf;align=left;verticalAlign=top;spacingLeft=6;spacingTop=4;fontSize=11;" value="+ confirm()&#xa;+ cancel()" vertex="1">
+          <mxGeometry height="42" width="220" x="380" y="292" as="geometry" />
+        </mxCell>
+        <mxCell id="n11" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;align=center;" value="MedicalRecord" vertex="1">
+          <mxGeometry height="28" width="220" x="720" y="190" as="geometry" />
+        </mxCell>
+        <mxCell id="n12" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#6c8ebf;align=left;verticalAlign=top;spacingLeft=6;spacingTop=4;fontSize=11;" value="- recordId: String&#xa;- diagnosis: String&#xa;- treatment: String&#xa;- recordDate: Date" vertex="1">
+          <mxGeometry height="74" width="220" x="720" y="218" as="geometry" />
+        </mxCell>
+        <mxCell id="n13" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#6c8ebf;align=left;verticalAlign=top;spacingLeft=6;spacingTop=4;fontSize=11;" value="+ createRecord()" vertex="1">
+          <mxGeometry height="26" width="220" x="720" y="292" as="geometry" />
+        </mxCell>
+        <mxCell id="n14" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;align=center;" value="DentalService" vertex="1">
+          <mxGeometry height="28" width="220" x="1060" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="n15" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#6c8ebf;align=left;verticalAlign=top;spacingLeft=6;spacingTop=4;fontSize=11;" value="- serviceId: String&#xa;- serviceName: String&#xa;- price: Double" vertex="1">
+          <mxGeometry height="58" width="220" x="1060" y="88" as="geometry" />
+        </mxCell>
+        <mxCell id="n16" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#6c8ebf;align=left;verticalAlign=top;spacingLeft=6;spacingTop=4;fontSize=11;" value="+ getPrice()" vertex="1">
+          <mxGeometry height="26" width="220" x="1060" y="146" as="geometry" />
+        </mxCell>
+        <mxCell id="n17" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;align=center;" value="Invoice" vertex="1">
+          <mxGeometry height="28" width="220" x="1060" y="320" as="geometry" />
+        </mxCell>
+        <mxCell id="n18" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#6c8ebf;align=left;verticalAlign=top;spacingLeft=6;spacingTop=4;fontSize=11;" value="- invoiceId: String&#xa;- invoiceDate: Date&#xa;- totalAmount: Double" vertex="1">
+          <mxGeometry height="58" width="220" x="1060" y="348" as="geometry" />
+        </mxCell>
+        <mxCell id="n19" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#6c8ebf;align=left;verticalAlign=top;spacingLeft=6;spacingTop=4;fontSize=11;" value="+ calculateTotal()&#xa;+ printInvoice()" vertex="1">
+          <mxGeometry height="42" width="220" x="1060" y="406" as="geometry" />
+        </mxCell>
+        <mxCell id="n20" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;align=center;" value="InvoiceDetail" vertex="1">
+          <mxGeometry height="28" width="220" x="1060" y="560" as="geometry" />
+        </mxCell>
+        <mxCell id="n21" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#6c8ebf;align=left;verticalAlign=top;spacingLeft=6;spacingTop=4;fontSize=11;" value="- detailId: String&#xa;- quantity: int&#xa;- unitPrice: Double&#xa;- lineTotal: Double" vertex="1">
+          <mxGeometry height="74" width="220" x="1060" y="588" as="geometry" />
+        </mxCell>
+        <mxCell id="n22" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#6c8ebf;align=left;verticalAlign=top;spacingLeft=6;spacingTop=4;fontSize=11;" value="+ calculateLineTotal()" vertex="1">
+          <mxGeometry height="26" width="220" x="1060" y="662" as="geometry" />
+        </mxCell>
+        <mxCell id="n23" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;align=center;" value="PaymentMethod" vertex="1">
+          <mxGeometry height="28" width="220" x="1400" y="320" as="geometry" />
+        </mxCell>
+        <mxCell id="n24" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#6c8ebf;align=left;verticalAlign=top;spacingLeft=6;spacingTop=4;fontSize=11;" value="- paymentId: String&#xa;- amount: Double" vertex="1">
+          <mxGeometry height="42" width="220" x="1400" y="348" as="geometry" />
+        </mxCell>
+        <mxCell id="n25" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#6c8ebf;align=left;verticalAlign=top;spacingLeft=6;spacingTop=4;fontSize=11;" value="+ processPayment()" vertex="1">
+          <mxGeometry height="26" width="220" x="1400" y="390" as="geometry" />
+        </mxCell>
+        <mxCell id="n26" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;align=center;" value="CashPayment" vertex="1">
+          <mxGeometry height="28" width="220" x="1400" y="500" as="geometry" />
+        </mxCell>
+        <mxCell id="n27" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#6c8ebf;align=left;verticalAlign=top;spacingLeft=6;spacingTop=4;fontSize=11;" value="- receivedAmount: Double" vertex="1">
+          <mxGeometry height="26" width="220" x="1400" y="528" as="geometry" />
+        </mxCell>
+        <mxCell id="n28" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#6c8ebf;align=left;verticalAlign=top;spacingLeft=6;spacingTop=4;fontSize=11;" value="+ processPayment()" vertex="1">
+          <mxGeometry height="26" width="220" x="1400" y="554" as="geometry" />
+        </mxCell>
+        <mxCell id="n29" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;align=center;" value="TransferPayment" vertex="1">
+          <mxGeometry height="28" width="220" x="1400" y="640" as="geometry" />
+        </mxCell>
+        <mxCell id="n30" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#6c8ebf;align=left;verticalAlign=top;spacingLeft=6;spacingTop=4;fontSize=11;" value="- bankRef: String" vertex="1">
+          <mxGeometry height="26" width="220" x="1400" y="668" as="geometry" />
+        </mxCell>
+        <mxCell id="n31" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#6c8ebf;align=left;verticalAlign=top;spacingLeft=6;spacingTop=4;fontSize=11;" value="+ processPayment()" vertex="1">
+          <mxGeometry height="26" width="220" x="1400" y="694" as="geometry" />
+        </mxCell>
+        <mxCell id="n32" edge="1" parent="1" source="n2" style="endArrow=none;html=1;strokeColor=#000000;fontSize=11;exitX=1;exitY=0.3;exitDx=0;exitDy=0;entryX=0;entryY=0.3;entryDx=0;entryDy=0;" target="n8" value="1                     0..*">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="n33" edge="1" parent="1" source="n5" style="endArrow=none;html=1;strokeColor=#000000;fontSize=11;exitX=1;exitY=0.6;exitDx=0;exitDy=0;entryX=0;entryY=0.7;entryDx=0;entryDy=0;" target="n8" value="1                     0..*">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="n34" edge="1" parent="1" source="n8" style="endArrow=none;html=1;strokeColor=#000000;fontSize=11;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="n11" value="1                1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="n35" edge="1" parent="1" source="n11" style="endArrow=none;html=1;strokeColor=#000000;fontSize=11;exitX=1;exitY=0.9;exitDx=0;exitDy=0;entryX=0;entryY=0.3;entryDx=0;entryDy=0;" target="n17" value="1              1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n36" edge="1" parent="1" source="n20" style="endArrow=none;html=1;strokeColor=#000000;fontSize=11;exitX=1;exitY=0.2;exitDx=0;exitDy=0;entryX=1;entryY=0.9;entryDx=0;entryDy=0;" target="n14" value="0..*                 1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1350" y="620" />
+              <mxPoint x="1350" y="150" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="n37" edge="1" parent="1" source="n17" style="endArrow=diamondThin;startArrow=none;endFill=1;html=1;strokeColor=#000000;fontSize=11;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="n20" value="1                1..*">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="n38" edge="1" parent="1" source="n17" style="endArrow=none;html=1;strokeColor=#000000;fontSize=11;exitX=1;exitY=0.3;exitDx=0;exitDy=0;entryX=0;entryY=0.3;entryDx=0;entryDy=0;" target="n23" value="1        1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="n39" edge="1" parent="1" source="n26" style="endArrow=block;endFill=0;html=1;strokeColor=#000000;exitX=1;exitY=0.2;exitDx=0;exitDy=0;entryX=1;entryY=0.9;entryDx=0;entryDy=0;" target="n23" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="n40" edge="1" parent="1" source="n29" style="endArrow=block;endFill=0;html=1;strokeColor=#000000;exitX=1;exitY=0.2;exitDx=0;exitDy=0;entryX=1;entryY=0.95;entryDx=0;entryDy=0;" target="n23" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1660" y="660" />
+              <mxPoint x="1660" y="380" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
