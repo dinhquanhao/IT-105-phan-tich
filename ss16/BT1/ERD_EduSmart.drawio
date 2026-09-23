@@ -1,0 +1,56 @@
+<mxfile host="app.diagrams.net">
+  <diagram id="erd-edusmart" name="ERD EduSmart">
+    <mxGraphModel dx="1000" dy="600" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="600" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <mxCell id="HV" value="HOC_VIEN" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="40" y="120" width="220" height="120" as="geometry"/>
+        </mxCell>
+        <mxCell id="HV1" value="PK  MaHV" style="text;align=left;verticalAlign=middle;spacingLeft=8;fontStyle=1;strokeColor=none;fillColor=none;" vertex="1" parent="HV">
+          <mxGeometry y="30" width="220" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="HV2" value="HoTen" style="text;align=left;verticalAlign=middle;spacingLeft=8;strokeColor=none;fillColor=none;" vertex="1" parent="HV">
+          <mxGeometry y="60" width="220" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="HV3" value="NgaySinh" style="text;align=left;verticalAlign=middle;spacingLeft=8;strokeColor=none;fillColor=none;" vertex="1" parent="HV">
+          <mxGeometry y="90" width="220" height="30" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="DK" value="DANG_KY (thực thể trung gian)" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="400" y="120" width="260" height="120" as="geometry"/>
+        </mxCell>
+        <mxCell id="DK1" value="PK, FK  MaHV" style="text;align=left;verticalAlign=middle;spacingLeft=8;fontStyle=1;strokeColor=none;fillColor=none;" vertex="1" parent="DK">
+          <mxGeometry y="30" width="260" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="DK2" value="PK, FK  MaKH" style="text;align=left;verticalAlign=middle;spacingLeft=8;fontStyle=1;strokeColor=none;fillColor=none;" vertex="1" parent="DK">
+          <mxGeometry y="60" width="260" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="DK3" value="DiemSo" style="text;align=left;verticalAlign=middle;spacingLeft=8;strokeColor=none;fillColor=none;" vertex="1" parent="DK">
+          <mxGeometry y="90" width="260" height="30" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="KH" value="KHOA_HOC" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="800" y="120" width="220" height="120" as="geometry"/>
+        </mxCell>
+        <mxCell id="KH1" value="PK  MaKH" style="text;align=left;verticalAlign=middle;spacingLeft=8;fontStyle=1;strokeColor=none;fillColor=none;" vertex="1" parent="KH">
+          <mxGeometry y="30" width="220" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="KH2" value="TenKH" style="text;align=left;verticalAlign=middle;spacingLeft=8;strokeColor=none;fillColor=none;" vertex="1" parent="KH">
+          <mxGeometry y="60" width="220" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="KH3" value="SoTietHoc" style="text;align=left;verticalAlign=middle;spacingLeft=8;strokeColor=none;fillColor=none;" vertex="1" parent="KH">
+          <mxGeometry y="90" width="220" height="30" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="R1" value="1 - N (một học viên đăng ký nhiều lượt)" style="edgeStyle=entityRelationEdgeStyle;fontSize=11;startArrow=ERmandOne;endArrow=ERmany;startFill=0;endFill=0;html=1;" edge="1" parent="1" source="HV" target="DK">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="R2" value="1 - N (một khóa học có nhiều lượt đăng ký)" style="edgeStyle=entityRelationEdgeStyle;fontSize=11;startArrow=ERmandOne;endArrow=ERmany;startFill=0;endFill=0;html=1;" edge="1" parent="1" source="KH" target="DK">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
