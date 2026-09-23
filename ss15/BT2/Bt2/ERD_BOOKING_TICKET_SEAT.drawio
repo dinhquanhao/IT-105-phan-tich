@@ -1,0 +1,93 @@
+<mxfile host="app.diagrams.net" modified="2026-09-23T00:00:00.000Z" agent="Claude" version="24.0.0" type="device">
+  <diagram name="M-N Booking-Seat" id="erdmn2">
+    <mxGraphModel dx="1000" dy="600" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="750" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- BOOKING table -->
+        <mxCell id="booking" value="BOOKING" style="swimlane;fontStyle=1;align=center;verticalAlign=top;fillColor=#dae8fc;strokeColor=#1a56db;fontSize=15;startSize=30;" vertex="1" parent="1">
+          <mxGeometry x="40" y="100" width="220" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="bk1" value="BookingID (PK)" style="text;align=left;fontStyle=4;spacingLeft=8;" vertex="1" parent="booking">
+          <mxGeometry y="30" width="220" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="bk2" value="CustomerID (FK)" style="text;align=left;spacingLeft=8;" vertex="1" parent="booking">
+          <mxGeometry y="60" width="220" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="bk3" value="BookingDate" style="text;align=left;spacingLeft=8;" vertex="1" parent="booking">
+          <mxGeometry y="90" width="220" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="bk4" value="Status" style="text;align=left;spacingLeft=8;" vertex="1" parent="booking">
+          <mxGeometry y="120" width="220" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- TICKET / BOOKING_DETAIL bridge table -->
+        <mxCell id="ticket" value="TICKET / BOOKING_DETAIL" style="swimlane;fontStyle=1;align=center;verticalAlign=top;fillColor=#ffe6cc;strokeColor=#b45309;fontSize=14;startSize=30;" vertex="1" parent="1">
+          <mxGeometry x="420" y="60" width="260" height="220" as="geometry" />
+        </mxCell>
+        <mxCell id="tk1" value="TicketID (PK)" style="text;align=left;fontStyle=4;spacingLeft=8;" vertex="1" parent="ticket">
+          <mxGeometry y="30" width="260" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="tk2" value="BookingID (FK)" style="text;align=left;fontStyle=4;spacingLeft=8;" vertex="1" parent="ticket">
+          <mxGeometry y="60" width="260" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="tk3" value="SeatID (FK)" style="text;align=left;fontStyle=4;spacingLeft=8;" vertex="1" parent="ticket">
+          <mxGeometry y="90" width="260" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="tk4" value="ShowtimeID (FK)" style="text;align=left;fontStyle=4;spacingLeft=8;" vertex="1" parent="ticket">
+          <mxGeometry y="120" width="260" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="tk5" value="Price (giá đóng băng tại thời điểm mua)" style="text;align=left;spacingLeft=8;fontColor=#b45309;fontStyle=1;" vertex="1" parent="ticket">
+          <mxGeometry y="150" width="260" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="tk6" value="UNIQUE (SeatID, ShowtimeID)" style="text;align=left;spacingLeft=8;fontSize=11;fontColor=#374151;" vertex="1" parent="ticket">
+          <mxGeometry y="190" width="260" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- SEAT table -->
+        <mxCell id="seat" value="SEAT" style="swimlane;fontStyle=1;align=center;verticalAlign=top;fillColor=#d5e8d4;strokeColor=#15803d;fontSize=15;startSize=30;" vertex="1" parent="1">
+          <mxGeometry x="40" y="420" width="220" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="st1" value="SeatID (PK)" style="text;align=left;fontStyle=4;spacingLeft=8;" vertex="1" parent="seat">
+          <mxGeometry y="30" width="220" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="st2" value="SeatCode" style="text;align=left;spacingLeft=8;" vertex="1" parent="seat">
+          <mxGeometry y="60" width="220" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="st3" value="SeatType (VIP/Standard)" style="text;align=left;spacingLeft=8;" vertex="1" parent="seat">
+          <mxGeometry y="90" width="220" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="st4" value="RoomID (FK)" style="text;align=left;spacingLeft=8;" vertex="1" parent="seat">
+          <mxGeometry y="120" width="220" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- SHOWTIME table (reference / dashed, designed later) -->
+        <mxCell id="showtime" value="SHOWTIME (thiết kế ở bài sau)" style="swimlane;fontStyle=1;align=center;verticalAlign=top;fillColor=#e9d5ff;strokeColor=#7e22ce;dashed=1;fontSize=13;startSize=30;" vertex="1" parent="1">
+          <mxGeometry x="820" y="420" width="260" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="sh1" value="ShowtimeID (PK)" style="text;align=left;fontStyle=4;spacingLeft=8;" vertex="1" parent="showtime">
+          <mxGeometry y="30" width="260" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="sh2" value="MovieID, RoomID, StartTime..." style="text;align=left;spacingLeft=8;fontSize=11;fontColor=#6b7280;" vertex="1" parent="showtime">
+          <mxGeometry y="60" width="260" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- Relationships -->
+        <mxCell id="e1" style="edgeStyle=entityRelationEdgeStyle;fontSize=12;startArrow=ERone;endArrow=ERmany;html=1;" edge="1" parent="1" source="booking" target="ticket">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" style="edgeStyle=entityRelationEdgeStyle;fontSize=12;startArrow=ERone;endArrow=ERmany;html=1;" edge="1" parent="1" source="seat" target="ticket">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" style="edgeStyle=entityRelationEdgeStyle;fontSize=12;startArrow=ERone;endArrow=ERmany;html=1;dashed=1;" edge="1" parent="1" source="showtime" target="ticket">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="note" value="N-N giữa BOOKING và SEAT được phân rã thành 2 quan hệ 1-N qua thực thể trung gian TICKET.&#10;UNIQUE(SeatID, ShowtimeID) đảm bảo 1 ghế/1 suất chiếu chỉ bán 1 lần (chống double-booking)." style="text;align=center;fontColor=#6b7280;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="300" y="600" width="600" height="50" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

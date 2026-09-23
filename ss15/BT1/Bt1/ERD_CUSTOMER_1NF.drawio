@@ -1,0 +1,64 @@
+<mxfile host="app.diagrams.net" modified="2026-09-23T00:00:00.000Z" agent="Claude" version="24.0.0" type="device">
+  <diagram name="1NF - CUSTOMER" id="erd1nf">
+    <mxGraphModel dx="1000" dy="600" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="650" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- CUSTOMER table -->
+        <mxCell id="cust" value="CUSTOMER" style="swimlane;fontStyle=1;align=center;verticalAlign=top;fillColor=#dae8fc;strokeColor=#1a56db;fontSize=15;startSize=30;" vertex="1" parent="1">
+          <mxGeometry x="60" y="80" width="240" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="cust1" value="CustomerID (PK)" style="text;align=left;fontStyle=4;spacingLeft=8;" vertex="1" parent="cust">
+          <mxGeometry y="30" width="240" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="cust2" value="FullName" style="text;align=left;spacingLeft=8;" vertex="1" parent="cust">
+          <mxGeometry y="60" width="240" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="cust3" value="PhoneNumber  (NOT NULL)" style="text;align=left;spacingLeft=8;" vertex="1" parent="cust">
+          <mxGeometry y="90" width="240" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="cust4" value="Email  (NULL cho phép)" style="text;align=left;spacingLeft=8;" vertex="1" parent="cust">
+          <mxGeometry y="120" width="240" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="cust5" value="(đã tách bỏ FavoriteGenres)" style="text;align=left;spacingLeft=8;fontColor=#b91c1c;fontStyle=2;" vertex="1" parent="cust">
+          <mxGeometry y="150" width="240" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- CUSTOMER_GENRE bridge table -->
+        <mxCell id="bridge" value="CUSTOMER_GENRE" style="swimlane;fontStyle=1;align=center;verticalAlign=top;fillColor=#ffe6cc;strokeColor=#b45309;fontSize=15;startSize=30;" vertex="1" parent="1">
+          <mxGeometry x="420" y="110" width="240" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="b1" value="CustomerID (PK, FK)" style="text;align=left;fontStyle=4;spacingLeft=8;" vertex="1" parent="bridge">
+          <mxGeometry y="30" width="240" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="b2" value="GenreID (PK, FK)" style="text;align=left;fontStyle=4;spacingLeft=8;" vertex="1" parent="bridge">
+          <mxGeometry y="60" width="240" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- GENRE table -->
+        <mxCell id="genre" value="GENRE" style="swimlane;fontStyle=1;align=center;verticalAlign=top;fillColor=#d5e8d4;strokeColor=#15803d;fontSize=15;startSize=30;" vertex="1" parent="1">
+          <mxGeometry x="780" y="110" width="220" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="g1" value="GenreID (PK)" style="text;align=left;fontStyle=4;spacingLeft=8;" vertex="1" parent="genre">
+          <mxGeometry y="30" width="220" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="g2" value="GenreName" style="text;align=left;spacingLeft=8;" vertex="1" parent="genre">
+          <mxGeometry y="60" width="220" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- Relationships -->
+        <mxCell id="e1" style="edgeStyle=entityRelationEdgeStyle;fontSize=12;startArrow=ERone;endArrow=ERmany;html=1;" edge="1" parent="1" source="cust" target="bridge">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" style="edgeStyle=entityRelationEdgeStyle;fontSize=12;startArrow=ERmany;endArrow=ERone;html=1;" edge="1" parent="1" source="bridge" target="genre">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="note" value="Quan hệ N-N giữa CUSTOMER và GENRE được giải quyết qua bảng trung gian CUSTOMER_GENRE" style="text;align=center;fontColor=#6b7280;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="380" y="260" width="500" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
